@@ -1,5 +1,9 @@
 #include "accel.h"
 
+float rawx = 0;
+float rawy = 0;
+float rawz = 0;
+
 void setup()
 {
     accel_setup();
@@ -8,6 +12,7 @@ void setup()
 
 void loop()
 {
-  read_accel();
-  Serial.println(get_speed());
+  Serial.print("speed: ");
+  Serial.println(get_accel());
+  delay(PERIOD_MS);
 }
