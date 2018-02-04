@@ -10,9 +10,9 @@ MMA7660 acc;
 float ax,ay,az,ax1=0,ay1=0,az1=0,vx=0,vy=0,vz=0;
 void read_accel() {
   acc.getAcceleration(&ax,&ay,&az);
-  vx = .05 * (ax1 + ax)/20.0;
-  vy = .05 * (ay1 + ay)/20.0;
-  vz = .05 * (az1 + az)/20.0;
+  vx = vx + (.05 * (ax1 + ax)/20.0);
+  vy = vy + (.05 * (ay1 + ay)/20.0);
+  vz = vz + (.05 * (az1 + az)/20.0);
   ax1 = ax;
   ay1 = ay;
   az1 = az;
