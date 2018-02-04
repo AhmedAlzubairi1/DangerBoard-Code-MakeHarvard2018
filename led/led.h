@@ -13,12 +13,11 @@
 
 Adafruit_NeoPixel leds = Adafruit_NeoPixel(LED_COUNT, LED_PIN, NEO_GRB + NEO_KHZ800);
 
-struct color {
+struct color_t {
   uint8_t red;
   uint8_t green;
   uint8_t blue;
 };
-typedef color color_t;
 
 void led_setup() {
   leds.begin();
@@ -40,17 +39,17 @@ void flash_red(uint8_t start_led_index, uint8_t end_led_index, unsigned int flas
 #define RIGHT_END 59
 
 // convenience shortcuts to one of the specific strings
-set_color_left(color_t color) {
+void set_color_left(color_t color) {
   set_color(LEFT_START, LEFT_END, color);
   return;
 }
 
-set_color_center(color_t color) {
+void set_color_center(color_t color) {
   set_color(CENT_START, CENT_END, color);
   return;
 }
 
-set_color_right(color_t color) {
+void set_color_right(color_t color) {
   set_color(RIGHT_START, RIGHT_END, color);
   return;
 }
