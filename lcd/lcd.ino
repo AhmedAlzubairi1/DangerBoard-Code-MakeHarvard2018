@@ -1,6 +1,4 @@
-#include "rgb_lcd.h"
-
-rgb_lcd lcd;
+#include "lcd.h"
 
 const int colorR = 255;
 const int colorG = 0;
@@ -9,23 +7,17 @@ const int colorB = 0;
 void setup() 
 {
     // set up the LCD's number of columns and rows:
-    lcd.begin(16, 2);
+    lcd_setup();
     
-    lcd.setRGB(colorR, colorG, colorB);
+    lcd_set_color(colorR, colorG, colorB);
     
     // Print a message to the LCD.
-    lcd.print("hello, world!");
-
-    delay(1000);
+    lcd_print("hello starshine,");
+    lcd_move_cursor(0,1);
+    lcd_print("Earth says hello");
 }
 
 void loop() 
 {
-    // set the cursor to column 0, line 1
-    // (note: line 1 is the second row, since counting begins with 0):
-    lcd.setCursor(0, 1);
-    // print the number of seconds since reset:
-    lcd.print(millis()/1000);
-
-    delay(100);
+  
 }
